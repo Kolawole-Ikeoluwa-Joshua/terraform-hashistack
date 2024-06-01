@@ -2,6 +2,7 @@ infrastructure/keys/*
 *terraform.tfstate*
 .terraform
 infrastructure/crash.log
+infrastructure/keys
 infrastructure/terraform.tfvars
 infrastructure/.terraform.lock.hcl
 python-clients/venv
