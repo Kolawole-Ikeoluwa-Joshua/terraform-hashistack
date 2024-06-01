@@ -3,7 +3,7 @@ resource "aws_instance" "nginx" {
   count                  = 1
   instance_type          = var.instance_type
   key_name               = var.key_name
-  subnet_id              = var.subnet_id
+  subnet_id              = var.public_subnet
   iam_instance_profile   = aws_iam_instance_profile.nginx.name
   user_data              = data.template_file.nginx_userdata.rendered
   vpc_security_group_ids = [aws_security_group.nginx.id]

@@ -11,3 +11,6 @@ python-clients/venv
 python-clients/html/index.html
 
 token
+*.tfstate.backup
+*.hclic
+\.pyc
