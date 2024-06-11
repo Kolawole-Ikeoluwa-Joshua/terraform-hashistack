@@ -100,10 +100,9 @@ ssh -A ubuntu@$BASTION_HOST -L 8500:$CONSUL_SERVER:8500 -L 4646:$NOMAD_SERVER:46
 
 2. watch the deployment on the nomad UI or via `nomad status etherpad`
 
-
 ### Additional Documentation (FAQS)
 
-- [Architecture Breakdown]()
+- [Architecture Breakdown](./infrastructure/architecture.md)
 
 ### Common troubleshooting tasks
 
