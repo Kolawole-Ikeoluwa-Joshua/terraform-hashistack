@@ -1,6 +1,6 @@
 # Terraform Hashistack
 
-A Terraform-based deployment for the HarshiStack, including a bastion host, Consul, HAProxy, Nginx, Nomad, Traefik, and Vault resources. This repository contains all necessary configurations and scripts to automate the setup and management of this robust infrastructure stack.
+A Terraform-based deployment for the HashiStack, including a bastion host, Consul, HAProxy, Nginx, Nomad, & Traefik resources. This repository contains all necessary configurations and scripts to automate the setup and management of this robust infrastructure stack.
 
 It covers setting up a consul cluster, running in AWS, which
 
