@@ -51,20 +51,6 @@ module "haproxy" {
 }
 
 # This creates a traefik host
-# This creates a haproxy host
-module "haproxy" {
-  source        = "./haproxy"
-  ami           = data.aws_ami.ubuntu
-  instance_type = "t3.small"
-  num_instances = 1
-  key_name      = "kubeadm-k8s-cluster"
-  name          = "haproxy"
-  public_subnet = module.vpc.public_subnets[0]
-  vpc_id        = module.vpc.vpc_id
-  vpc_cidr      = var.vpc_cidr
-}
-
-# This creates a traefik host
 module "traefik" {
   source        = "./traefik"
   ami           = data.aws_ami.ubuntu
@@ -79,15 +65,15 @@ module "traefik" {
   vpc_cidr      = var.vpc_cidr
 }
 
-# This instantiates an nginx host, running the consul agent and reading from the consul KV store
-# switched off for now, to pursue traefik/nomad-service stuff
-module "nginx" {
-  source        = "./nginx"
-  ami           = data.aws_ami.ubuntu
-  instance_type = "t3.small"
-  key_name      = "kubeadm-k8s-cluster"
-  # public_subnet             = var.public_subnet_cidrs[0]
-  public_subnet = module.vpc.public_subnets[0]
-  vpc_id        = module.vpc.vpc_id
-  vpc_cidr      = var.vpc_cidr
-}
+# # This instantiates an nginx host, running the consul agent and reading from the consul KV store
+# # switched off for now, to pursue traefik/nomad-service stuff
+# module "nginx" {
+#   source        = "./nginx"
+#   ami           = data.aws_ami.ubuntu
+#   instance_type = "t3.small"
+#   key_name      = "kubeadm-k8s-cluster"
+#   # public_subnet             = var.public_subnet_cidrs[0]
+#   public_subnet = module.vpc.public_subnets[0]
+#   vpc_id        = module.vpc.vpc_id
+#   vpc_cidr      = var.vpc_cidr
+# }
